@@ -124,7 +124,8 @@ section {
 /* Subheadline constrained beneath the headline */
 .hero-content p {
   margin: 0;
-  max-width: 640px;
+  /* Limit subheadline width to half of the hero content for better readability */
+  max-width: 50%;
   font-size: 1.15rem;
   line-height: 1.4;
 }
