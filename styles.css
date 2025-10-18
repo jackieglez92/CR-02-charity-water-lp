@@ -126,7 +126,7 @@ section {
   margin: 0;
   /* Limit subheadline width to half of the hero content for better readability */
   max-width: 50%;
-  font-size: 1.15rem;
+  font-size: 1rem; /* slightly smaller on desktop */
   line-height: 1.4;
 }
 
@@ -237,7 +237,7 @@ section {
 
   .hero-content p {
     max-width: 100%;
-    font-size: 1rem;
+    font-size: 0.95rem; /* slightly smaller on mobile */
   }
 
   /* Make headline font size smaller so it fits on small screens */
