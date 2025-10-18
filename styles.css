@@ -53,9 +53,10 @@ section {
 
   /* Use the uploaded, optimized photo in the img/ folder as the background */
   background-image: url("img/madagascar2019.jpg");
-  background-size: cover;        /* Cover the entire hero area */
-  /* Shift background toward upper-left for composition on large screens */
-  background-position: 20% 20%;
+  /* Slight zoom for a closer crop */
+  background-size: 120%;
+  /* Refocus a bit more to the top-left */
+  background-position: 15% 10%;
   background-repeat: no-repeat;
 }
 
@@ -190,6 +191,7 @@ section {
     font-size: 1em;
     /* Keep the image centered on small screens so the subject isn't cropped */
     background-position: center;
+    background-size: cover; /* ensure full coverage on small screens */
   }
 
   .hero-content {
