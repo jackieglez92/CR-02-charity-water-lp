@@ -42,22 +42,42 @@ section {
 }
 
 /* Hero Section Styles */
-.hero {.hero-section {
+.hero {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* Full viewport height for a dramatic hero */
   display: flex;
   align-items: center;
   justify-content: flex-start;
   text-align: left;
   overflow: hidden;
-  
-  /* 🖼️ Use your own background image */
-  background-image: url("Madagascar2019.jpg");
-  background-size: cover;
-  background-position: center;
+
+  /* Use the uploaded photo in the img/ folder as the background */
+  background-image: url("img/Madagascar  git add styles.css
+  git commit -m "Use uploaded Madagascar photo as hero background"
+  git add img/Madagascar2019.jpg
+  git commit --amend --no-edit   # optional: include image in same commit
+  git push origin main2019.jpg");
+  background-size: cover;        /* Cover the entire hero area */
+  background-position: center;  /* Center the photo */
   background-repeat: no-repeat;
 }
 
+/* Add a subtle dark overlay so white text remains readable on bright photos */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25);
+  pointer-events: none; /* Allow clicks through the overlay */
+}
+
+/* Ensure any text inside the hero sits above the overlay */
+.hero * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Make the headline bold and modern */
