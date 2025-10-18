@@ -26,11 +26,11 @@ Fonts:
 /* Set up the main font and background color for the whole page */
 body {
   background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  /* Use Proxima Nova as the primary font. Proxima Nova is a commercial
-     font — to ensure it displays correctly, load it via Adobe Fonts (Typekit)
-     or self-host the font files and use @font-face. The fallback order below
-     ensures reasonable alternatives when Proxima Nova isn't available. */
-  font-family: 'Proxima Nova', 'Avenir', Arial, sans-serif;
+  /* Use Avenir as the primary font. If Avenir isn't available on the visitor's
+    system, the fallback stack will use the next available system font. Avenir
+    is often available on macOS/iOS; to ensure consistent rendering across
+    platforms you can self-host Avenir files or choose a similar open font. */
+  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: #FFC907; /* Make global text charity yellow */
