@@ -82,6 +82,7 @@ section {
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 15px;
+  color: #FFC907; /* Charity yellow for the headline */
   text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
 }
 
@@ -89,6 +90,7 @@ section {
 .hero p {
   font-size: 1.2em;
   margin-top: 0;
+  color: #FFC907; /* Match headline color for hero subheadline */
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
 
