@@ -29,7 +29,7 @@ body {
   font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #222;
+  color: #FFC907; /* Make global text charity yellow */
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
@@ -54,7 +54,8 @@ section {
   /* Use the uploaded, optimized photo in the img/ folder as the background */
   background-image: url("img/madagascar2019.jpg");
   background-size: cover;        /* Cover the entire hero area */
-  background-position: center;  /* Center the photo */
+  /* Shift background slightly to the right for composition on large screens */
+  background-position: 70% center;
   background-repeat: no-repeat;
 }
 
@@ -166,6 +167,8 @@ section {
   .hero {
     padding: 32px 8px;
     font-size: 1em;
+    /* Keep the image centered on small screens so the subject isn't cropped */
+    background-position: center;
   }
 
   /* Make headline font size smaller so it fits on small screens */
