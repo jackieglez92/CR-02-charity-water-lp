@@ -77,6 +77,27 @@ section {
   z-index: 1;
 }
 
+/* Container to constrain hero text width and alignment */
+.hero-content {
+  max-width: 720px;    /* Keep headline and paragraph from stretching too wide */
+  margin-left: 48px;   /* position text away from left edge */
+}
+
+/* Headline formatting: ensure second sentence sits under the first */
+.hero-content h1 {
+  margin: 0 0 12px 0;
+  line-height: 1.05;
+  font-size: 3rem;
+}
+
+/* Subheadline constrained beneath the headline */
+.hero-content p {
+  margin: 0;
+  max-width: 640px;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
 /* Make the headline bold and modern */
 .hero h1 {
   font-size: 2.5em;
@@ -169,6 +190,21 @@ section {
     font-size: 1em;
     /* Keep the image centered on small screens so the subject isn't cropped */
     background-position: center;
+  }
+
+  .hero-content {
+    margin-left: 0;
+    padding: 0 12px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    max-width: 100%;
+    font-size: 1rem;
   }
 
   /* Make headline font size smaller so it fits on small screens */
