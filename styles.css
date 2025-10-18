@@ -51,12 +51,8 @@ section {
   text-align: left;
   overflow: hidden;
 
-  /* Use the uploaded photo in the img/ folder as the background */
-  background-image: url("img/Madagascar  git add styles.css
-  git commit -m "Use uploaded Madagascar photo as hero background"
-  git add img/Madagascar2019.jpg
-  git commit --amend --no-edit   # optional: include image in same commit
-  git push origin main2019.jpg");
+  /* Use the uploaded, optimized photo in the img/ folder as the background */
+  background-image: url("img/madagascar2019.jpg");
   background-size: cover;        /* Cover the entire hero area */
   background-position: center;  /* Center the photo */
   background-repeat: no-repeat;
