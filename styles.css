@@ -55,7 +55,7 @@ section {
   background-image: url("img/madagascar2019.jpg");
   background-size: cover;        /* Cover the entire hero area */
   /* Shift background slightly to the right for composition on large screens */
-  background-position: 70% center;
+  background-position: 60% center;
   background-repeat: no-repeat;
 }
 
