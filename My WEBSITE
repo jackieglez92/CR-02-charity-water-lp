@@ -8,14 +8,14 @@
 </head>
 <body>
   <header class="hero-section">
-    <div class="overlay"></div>
-    <img src="https://via.placeholder.com/1200x700" alt="Smiling child with clean water" class="hero-image" />
-    <div class="hero-content">
-      <h1>Small Gifts.<br>Big Change.</h1>
-      <p>With charity: water’s 100% model, even a $5 donation directly funds clean water projects you can track.</p>
-      <a href="#" class="cta-button">Donate Now</a>
-    </div>
-  </header>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Small Gifts.<br>Big Change.</h1>
+    <p>With charity: water’s 100% model, even a $5 donation directly funds clean water projects you can track.</p>
+    <a href="#" class="cta-button">Donate Now</a>
+  </div>
+</header>
+
 
   <footer class="footer">
     <p>© 2025 charity: water | Bringing clean water to those in need.</p>
