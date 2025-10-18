@@ -36,6 +36,32 @@ body {
   color: #FFC907; /* Make global text charity yellow */
 }
 
+/*
+  Optional: self-host Avenir webfont
+  - Place your font files in the `fonts/` folder with the exact names below.
+  - Example files to add: fonts/avenir-regular.woff2, fonts/avenir-bold.woff2
+  - If you add them, uncomment the @font-face blocks below.
+*/
+
+/* @font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir-regular.woff2') format('woff2'),
+       url('fonts/avenir-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir-bold.woff2') format('woff2'),
+       url('fonts/avenir-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
 /* Add a slight shadow and rounded corners to each section for depth */
 section {
   background: #fff; /* White background for sections */
