@@ -151,15 +151,15 @@ h2 {
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
+  background-color: #2E9DF7; /* Primary blue */
+  color: #fff; /* White text */
   padding: 14px 32px;
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
   font-size: 1.1em;
   margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
   transition: background 0.3s, transform 0.2s;
   border: none;
   cursor: pointer;
@@ -167,7 +167,7 @@ h2 {
 
 /* Change button color when hovered */
 .donate-button:hover {
-  background-color: #159A48; /* Dark Green */
+  background-color: #227dd6; /* Slightly darker blue */
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
