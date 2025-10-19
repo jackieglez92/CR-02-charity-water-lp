@@ -251,6 +251,27 @@ section {
   font-size: 0.88rem;
   text-transform: lowercase; /* display nav items in lowercase */
   letter-spacing: 0.4px;
+  position: relative; /* needed for underline positioning */
+}
+
+/* Underline slide effect */
+.top-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background: #FFC907; /* charity yellow underline */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.top-nav a:hover::after,
+.top-nav a:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .top-nav a:hover,
