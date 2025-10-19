@@ -89,8 +89,7 @@ section {
   position: relative;
   height: 100vh; /* Full viewport height for a dramatic hero */
   display: flex;
-  align-items: flex-start; /* Changed from center to flex-start to move content up */
-  padding-top: 15vh; /* Add top padding to position content higher */
+  align-items: center; /* Center content vertically */
   justify-content: flex-start;
   text-align: left;
   overflow: hidden;
