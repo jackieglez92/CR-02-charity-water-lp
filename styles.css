@@ -23,6 +23,17 @@ Fonts:
   This CSS uses the provided color palette and beginner-friendly styles.
 */
 
+/* CSS Custom Properties for consistent spacing and responsive design */
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --max-content-width: 720px;
+  --max-page-width: 1400px;
+}
+
 /* Set up the main font and background color for the whole page */
 body {
   background-color: #f4f8fb; /* Soft light blue for a fresh look */
@@ -34,6 +45,8 @@ body {
   margin: 0;
   padding: 0;
   color: #FFC907; /* Make global text charity yellow */
+  font-size: 16px; /* Base font size */
+  line-height: 1.6;
 }
 
 /*
@@ -110,8 +123,10 @@ section {
 
 /* Container to constrain hero text width and alignment */
 .hero-content {
-  max-width: 720px;    /* Keep headline and paragraph from stretching too wide */
-  margin-left: 48px;   /* position text away from left edge */
+  max-width: var(--max-content-width);
+  width: min(90%, var(--max-content-width));
+  margin-left: clamp(1rem, 4vw, 3rem); /* Fluid left margin */
+  padding-right: var(--space-md);
 }
 
 /* Site logo (top-left) */
@@ -162,6 +177,42 @@ section {
   .site-header .site-logo { width: 44px; }
 }
 
+/* Hamburger menu button (mobile only) */
+.nav-toggle {
+  display: none; /* Hidden by default (desktop) */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto; /* Push to right side */
+  z-index: 10;
+  flex-direction: column;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Animate hamburger to X when open */
+.nav-toggle.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.nav-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Top navigation as a normal flex item next to the logo */
 .top-nav {
   position: relative;
@@ -201,18 +252,18 @@ section {
 
 /* Headline formatting: ensure second sentence sits under the first */
 .hero-content h1 {
-  margin: 0 0 12px 0;
+  margin: 0 0 var(--space-md) 0;
   line-height: 1.05;
-  font-size: 3rem;
+  /* Fluid typography: scales from 2rem to 3.5rem based on viewport */
+  font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
 }
 
 /* Subheadline constrained beneath the headline */
 .hero-content p {
-  margin: 0;
-  /* Limit subheadline width to half of the hero content for better readability */
-  max-width: 50%;
-  font-size: 1rem; /* slightly smaller on desktop */
-  line-height: 1.4;
+  margin: 0 0 var(--space-lg) 0;
+  max-width: min(90%, 500px); /* Responsive width constraint */
+  font-size: clamp(0.95rem, 2vw + 0.5rem, 1.2rem);
+  line-height: 1.5;
 }
 
 /* Make the headline bold and modern */
@@ -281,12 +332,12 @@ h2 {
   display: inline-block;
   background-color: #2E9DF7; /* Primary blue */
   color: #fff; /* White text */
-  padding: 14px 32px;
+  padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 36px); /* Responsive padding */
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem); /* Responsive button text */
+  margin-top: var(--space-md);
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
   transition: background 0.3s, transform 0.2s;
   border: none;
@@ -310,11 +361,50 @@ section {
   like phones (small screens) and computers (large screens).
 */
 
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
+/* Extra small screens (portrait phones, less than 375px) */
+@media (max-width: 374px) {
+  .top-nav ul { gap: 6px; }
+  .top-nav a { font-size: 0.7rem; padding: 3px 5px; }
+  .hero-content { margin-left: var(--space-xs); padding-right: var(--space-xs); }
+}
+
+/* Small screens (phones, 600px and below) */
 @media (max-width: 600px) {
+  /* Show hamburger, hide desktop nav */
+  .nav-toggle { display: flex; }
+  
+  .top-nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    padding: var(--space-md);
+    transform: translateY(-120%);
+    transition: transform 0.3s ease;
+    margin-left: 0;
+  }
+  
+  .top-nav.nav-open {
+    transform: translateY(0);
+  }
+  
+  .top-nav ul {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: stretch;
+  }
+  
+  .top-nav a {
+    display: block;
+    padding: var(--space-sm);
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
   /* Make hero section padding smaller on small screens */
   .hero {
-    padding: 32px 8px;
+    padding: var(--space-lg) var(--space-xs);
     font-size: 1em;
     /* Keep the image centered on small screens so the subject isn't cropped */
     background-position: center;
@@ -323,22 +413,25 @@ section {
 
   .hero-content {
     margin-left: 0;
-    padding: 0 12px;
+    padding: 0 var(--space-sm);
     text-align: center;
+    width: 100%;
   }
 
   .hero-content h1 {
-    font-size: 1.8rem;
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    margin-bottom: var(--space-sm);
   }
 
   .hero-content p {
     max-width: 100%;
-    font-size: 0.95rem; /* slightly smaller on mobile */
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    margin-bottom: var(--space-md);
   }
 
   /* Make headline font size smaller so it fits on small screens */
   .hero h1 {
-    font-size: 1.4em;
+    font-size: 1.6em;
   }
 
   /* Make subheadline font size smaller */
@@ -350,7 +443,7 @@ section {
   .story,
   .call-to-action,
   .donation-section {
-    padding: 14px 8px;
+    padding: var(--space-sm) var(--space-xs);
   }
 
   /* Make impact story image smaller and stack above the text */
@@ -365,14 +458,69 @@ section {
   }
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
+/* Medium screens (tablets, 601px to 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .hero-content {
+    margin-left: var(--space-md);
+  }
+  
+  .hero-content p {
+    max-width: 80%;
+  }
+  
+  .top-nav a {
+    font-size: 0.85rem;
+  }
+}
+
+/* Large tablets and small desktops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+}
+
+/* Large desktops (1025px to 1400px) */
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .hero {
+    background-size: 110%;
+    background-position: 20% 15%;
+  }
+}
+
+/* Ultra-wide screens (above 1400px) */
+@media (min-width: 1401px) {
+  .hero {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-content {
+    max-width: var(--max-page-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  section {
+    max-width: var(--max-page-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Desktop and above: side-by-side layouts */
 @media (min-width: 601px) {
   /* Show image and text side by side in the impact story */
   .impact-content {
     display: flex;           /* Place items in a row */
     align-items: center;     /* Vertically center items */
     justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
+    gap: var(--space-lg);    /* Space between image and text */
     text-align: left;
     max-width: 800px;
     margin: 0 auto;
