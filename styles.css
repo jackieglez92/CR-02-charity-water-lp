@@ -282,6 +282,9 @@ section {
   margin-top: 0;
   color: #FFC907; /* Match headline color for hero subheadline */
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  background-color: rgba(0, 0, 0, 0.3); /* Subtle transparent background for readability */
+  padding: 1rem 1.5rem; /* Add padding around the text */
+  border-radius: 6px; /* Slightly rounded corners */
 }
 
 /* Style links inside the subheadline (e.g., "100% model") */
