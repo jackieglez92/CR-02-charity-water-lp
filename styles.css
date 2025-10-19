@@ -101,6 +101,19 @@ section {
   /* Refocus a bit more to the top-left */
   background-position: 15% 10%;
   background-repeat: no-repeat;
+  
+  /* Fade in animation */
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Add a subtle dark overlay so white text remains readable on bright photos */
