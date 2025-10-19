@@ -252,7 +252,7 @@ section {
 
 /* Headline formatting: ensure second sentence sits under the first */
 .hero-content h1 {
-  margin: 0 0 var(--space-md) 0;
+  margin: 0 0 var(--space-xl) 0; /* Increased spacing after headline */
   line-height: 1.05;
   /* Fluid typography: scales from 2rem to 3.5rem based on viewport */
   font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
@@ -260,7 +260,7 @@ section {
 
 /* Subheadline constrained beneath the headline */
 .hero-content p {
-  margin: 0 0 var(--space-lg) 0;
+  margin: 0 0 var(--space-xl) 0; /* Increased spacing after subheadline */
   max-width: 50%; /* Half width on desktop for better readability */
   font-size: clamp(0.95rem, 2vw + 0.5rem, 1.2rem);
   line-height: 1.5;
