@@ -253,7 +253,7 @@ section {
 
 /* Headline formatting: ensure second sentence sits under the first */
 .hero-content h1 {
-  margin: 0 0 var(--space-xl) 0; /* Increased spacing after headline */
+  margin: 0 0 4.5rem 0; /* Large spacing after headline to push content down */
   line-height: 1.05;
   /* Fluid typography: scales from 2rem to 3.5rem based on viewport */
   font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
