@@ -135,12 +135,12 @@ section {
 /* Header wrapper: use flex to align logo + nav reliably */
 .site-header {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
+  top: 6px; /* moved up closer to the very top */
+  left: 8px;
+  right: 8px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   z-index: 3;
 }
 
@@ -158,16 +158,15 @@ section {
 }
 
 @media (max-width: 600px) {
-  .site-header { top: 8px; left: 8px; right: 8px; gap: 10px; }
-  .site-header .site-logo { width: 48px; }
+  .site-header { top: 6px; left: 6px; right: 6px; gap: 8px; }
+  .site-header .site-logo { width: 44px; }
 }
 
-/* Top-left navigation aligned to the right of the logo */
+/* Top navigation as a normal flex item next to the logo */
 .top-nav {
-  position: absolute;
-  top: 18px;
-  left: 100px; /* sit to the right of the logo (logo ~72px + margin) */
-  z-index: 2;
+  position: relative;
+  margin-left: 8px; /* space between logo and nav */
+  z-index: 3;
   font-family: inherit;
 }
 .top-nav ul {
@@ -175,32 +174,29 @@ section {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 14px;
+  gap: 12px;
   align-items: center;
 }
 .top-nav a {
-  color: #FFC907; /* yellow links over the hero */
+  color: #fff; /* white links over the hero */
   text-decoration: none;
   font-weight: 600;
   padding: 6px 8px;
   border-radius: 4px;
   transition: background-color 0.15s ease, color 0.15s ease;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  text-transform: lowercase; /* display nav items in lowercase */
+  letter-spacing: 0.4px;
 }
 .top-nav a:hover,
 .top-nav a:focus {
   background: rgba(255,255,255,0.12);
-  color: #FFC907;
+  color: #fff;
 }
 
 @media (max-width: 600px) {
-  /* On small screens, place nav to the right of the smaller logo and tighten spacing */
-  .top-nav {
-    left: 72px; /* logo is ~48px on mobile + small gap */
-    top: 12px;
-  }
   .top-nav ul { gap: 8px; }
-  .top-nav a { font-size: 0.8rem; padding: 4px 6px; }
+  .top-nav a { font-size: 0.78rem; padding: 4px 6px; }
 }
 
 /* Headline formatting: ensure second sentence sits under the first */
@@ -235,6 +231,17 @@ section {
   margin-top: 0;
   color: #FFC907; /* Match headline color for hero subheadline */
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+/* Style links inside the subheadline (e.g., "100% model") */
+.hero p a {
+  color: #2E9DF7; /* Primary blue for inline links */
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+.hero p a:hover,
+.hero p a:focus {
+  color: #227dd6; /* Slightly darker blue on hover */
 }
 
 /* Story Section Styles */
