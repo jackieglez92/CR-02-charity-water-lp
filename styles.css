@@ -284,8 +284,8 @@ section {
 }
 
 .top-nav a:hover::before {
-  width: 300%;
-  height: 300%;
+  width: 100%; /* match the link width */
+  height: 100%; /* match the link height */
 }
 
 .top-nav a:hover,
