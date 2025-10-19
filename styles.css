@@ -132,6 +132,45 @@ section {
   }
 }
 
+/* Top-right navigation */
+.top-nav {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  z-index: 2;
+  font-family: inherit;
+}
+.top-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.top-nav a {
+  color: #ffffff; /* white links over the hero */
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.top-nav a:hover,
+.top-nav a:focus {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .top-nav {
+    right: 12px;
+    top: 12px;
+  }
+  .top-nav ul { gap: 12px; }
+  .top-nav a { font-size: 0.9rem; padding: 4px 6px; }
+}
+
 /* Headline formatting: ensure second sentence sits under the first */
 .hero-content h1 {
   margin: 0 0 12px 0;
