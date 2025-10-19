@@ -114,6 +114,24 @@ section {
   margin-left: 48px;   /* position text away from left edge */
 }
 
+/* Site logo (top-left) */
+.site-logo {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 72px; /* default desktop size */
+  height: auto;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .site-logo {
+    width: 48px; /* smaller on mobile */
+    top: 12px;
+    left: 12px;
+  }
+}
+
 /* Headline formatting: ensure second sentence sits under the first */
 .hero-content h1 {
   margin: 0 0 12px 0;
