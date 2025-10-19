@@ -322,7 +322,7 @@ section {
 /* Style links inside the subheadline (e.g., "100% model") */
 .hero p a {
   color: #2E9DF7; /* Primary blue for inline links */
-  text-decoration: underline;
+  text-decoration: none; /* Remove underline */
   transition: color 0.2s ease;
 }
 .hero p a:hover,
@@ -367,11 +367,11 @@ h2 {
   display: inline-block;
   background-color: #2E9DF7; /* Primary blue */
   color: #fff; /* White text */
-  padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 36px); /* Responsive padding */
+  padding: clamp(10px, 1.5vw, 12px) clamp(20px, 3vw, 28px); /* Smaller responsive padding */
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
-  font-size: clamp(1rem, 1.5vw, 1.2rem); /* Responsive button text */
+  font-size: clamp(0.9rem, 1.2vw, 1rem); /* Smaller responsive button text */
   margin-top: var(--space-md);
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
   transition: background 0.3s, transform 0.2s;
