@@ -132,12 +132,41 @@ section {
   }
 }
 
-/* Top navigation moved to bottom-left */
+/* Header wrapper: use flex to align logo + nav reliably */
+.site-header {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 3;
+}
+
+.site-header .site-logo {
+  position: relative; /* remove absolute within wrapper */
+  top: 0;
+  left: 0;
+  width: 72px;
+}
+
+.site-header .top-nav {
+  position: relative;
+  left: 0;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .site-header { top: 8px; left: 8px; right: 8px; gap: 10px; }
+  .site-header .site-logo { width: 48px; }
+}
+
+/* Top-left navigation aligned to the right of the logo */
 .top-nav {
   position: absolute;
-  bottom: 18px;
-  left: 18px;
-  transform: none;
+  top: 18px;
+  left: 100px; /* sit to the right of the logo (logo ~72px + margin) */
   z-index: 2;
   font-family: inherit;
 }
@@ -165,9 +194,10 @@ section {
 }
 
 @media (max-width: 600px) {
+  /* On small screens, place nav to the right of the smaller logo and tighten spacing */
   .top-nav {
-    bottom: 12px;
-    left: 12px;
+    left: 72px; /* logo is ~48px on mobile + small gap */
+    top: 12px;
   }
   .top-nav ul { gap: 8px; }
   .top-nav a { font-size: 0.8rem; padding: 4px 6px; }
