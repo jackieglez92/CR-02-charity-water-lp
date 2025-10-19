@@ -149,7 +149,7 @@ section {
   align-items: center;
 }
 .top-nav a {
-  color: #ffffff; /* white links over the hero */
+  color: #FFC907; /* yellow links over the hero */
   text-decoration: none;
   font-weight: 600;
   padding: 6px 8px;
@@ -159,7 +159,7 @@ section {
 .top-nav a:hover,
 .top-nav a:focus {
   background: rgba(255,255,255,0.12);
-  color: #fff;
+  color: #FFC907;
 }
 
 @media (max-width: 600px) {
